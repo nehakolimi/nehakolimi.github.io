@@ -9,7 +9,7 @@ logo_url: svg/min/logo.svg
 hero: 
     hero_img: hero.jpg
     hero_title: Pedodontist
-    hero_description: Pedodontist from BHEL.
+    hero_description: Creating Little Smiles Everyday.
 
 # Contact form
 api_token: # Enter API token here
@@ -18,7 +18,7 @@ api_token: # Enter API token here
 contact:
     phone: 932 50 540
     emergency: 931 53 234
-    email: contact@yoursite.com
+    email: kolimineha@gmail.com
     address: Von schroeders 273, <br> Viña del mar - Chile
 
 # Opening hours
