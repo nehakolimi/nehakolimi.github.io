@@ -37,7 +37,7 @@ map:
     address_details: svg/min/logo.svg
 
 # Social settings
-facebook: http://facebook.com
+facebook: https://www.facebook.com/nehakolimi
 twitter: http://twitter.com
 instagram: http://instagram.com
 youtube: http://youtube.com
@@ -45,7 +45,7 @@ skype: skype:obaez_design?userinfo
 feed: yes
 
 # Footer
-copyright: © 2015 DentistSmile - All rights reserved
+copyright: © 2018 Dr Neha Kolimi - All rights reserved
 
 # Build settings
 markdown: kramdown
