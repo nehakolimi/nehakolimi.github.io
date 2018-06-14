@@ -12,7 +12,7 @@ hero:
     hero_description: I create beautiful little smiles everyday.
 
 # Contact form
-api_token: # Enter API token here
+api_token: 7ca8de1c5899ca12ab7ba52ed2f6bbb6
 
 # Contact info
 contact:
