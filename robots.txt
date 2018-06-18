@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nehakolimi.github.io/sitemap.xml
