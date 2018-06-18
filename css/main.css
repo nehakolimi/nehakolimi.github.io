@@ -5991,12 +5991,12 @@ strong{
 .blog-title{
     margin-bottom:60px;
     text-align:center;
-	color:#fff
+    color:#fff
 }
 
-.blog-title .description{
+p.blog-description{
     text-align:center;
-	color:#fff
+    color:#fff
 }
 .treatments{
     background:#f7f7f7
