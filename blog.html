@@ -19,12 +19,12 @@ layout: bloglayout
     <div class="container-fluid">
         <h2 class="section-title">Featured Articles</h2>
         <div class="row">
-            {% for treatment in site.data.blogs %}
+            {% for blogs in site.data.blogs %}
                 <div class="col-sm-6 col-md-4">
                     <div class="icon-box">
                         <h4>{{ blogs.blog_title }}</h4>
                         <p>{{ blogs.blog_description }}</p>
-						<a href="#{{ blogs.blog_readmore }}">Read More</a>
+			<a href="#{{ blogs.blog_readmore }}">Read More</a>
                     </div>
                 </div>
             {% endfor %}
