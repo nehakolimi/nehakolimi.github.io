@@ -5989,7 +5989,7 @@ strong{
 }
 
 .blog-title{
-    margin-bottom:60px;
+    margin-bottom:10px;
     text-align:center;
     color:#fff
 }
@@ -5997,6 +5997,13 @@ strong{
 p.blog-description{
     text-align:center;
     color:#fff
+}
+
+img.banner-icon{
+    max-width:20%;
+    height:auto;
+    vertical-align:middle;
+	margin-bottom:10px;
 }
 .treatments{
     background:#f7f7f7
