@@ -1,0 +1,33 @@
+---
+layout: bloglayout
+---
+<div class="hero" style="background: linear-gradient(to top, #74ebd5 0%, #acb6e5 100%); background-size: cover;">
+<!-- Blog Title -->
+<div id="blog" class="about">
+    <div class="container-fluid">
+        <h1 class="blog-title"><u><b>BLOG</b></u></h1>
+        <h2 class="blog-title">Beautiful tips for happy little teeth</h2>
+        <center><img class="banner-icon" src="svg/molar.svg" alt=""></center>
+                <p class="blog-description">Prevention is always better than cure. This is absolutely true with dental problems. Most of the frequent issues can be avoided with good care & a regular dental check up. This blog section will feature exclusive tips, suggestions about kids dental care. Hope this will of great help to the parents</p>   
+            </div>
+        </div>
+    </div>
+<!-- End About -->
+
+<!-- Start blog listing -->
+<div id="bloglist" class="treatments">
+    <div class="container-fluid">
+        <h2 class="section-title">Featured Articles</h2>
+        <div class="row">
+            {% for blogs in site.data.blogs %}
+                <div class="col-sm-6 col-md-4">
+                    <div class="icon-box">
+                        <h4>{{ blogs.blog_title }}</h4>
+                        <p>{{ blogs.blog_description }}</p>
+			<a href="#{{ blogs.blog_readmore }}">Read More</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

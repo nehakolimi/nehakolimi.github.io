@@ -1,108 +1,42 @@
 (function($) {
-    'use strict';
+  "use strict";
 
-    /* Hide menu after click
-    ----------------------------------------------*/
-    $('.navbar-nav li a').click(function(event) {
-        $('.in').collapse('hide');
-    });
+  // Smooth scrolling using jQuery easing
+  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: (target.offset().top - 70)
+        }, 1000);
+        return;
+      }
+    }
+  });
 
-    /* Smooth scroll to section
-    ----------------------------------------------*/
-    $('a.scroll[href*=#]:not([href=#])').click(function() {
-        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+  // Closes responsive menu when a scroll trigger link is clicked
+  $('.js-scroll-trigger').click(function() {
+    $('.navbar-collapse').collapse('hide');
+  });
 
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-            if (target.length) {
-                $('html,body').animate({
-                    scrollTop: target.offset().top-70
-                }, 2000);
-                return false;
-            }
-        }
-    });
+  // Activate scrollspy to add active class to navbar items on scroll
+  $('body').scrollspy({
+    target: '#mainNav',
+    offset: 100
+  });
 
-    /* Team slideshow
-    ----------------------------------------------*/
-    $("#team-carousel").owlCarousel({
- 
-        autoPlay: 5000, //Set AutoPlay to 5 seconds
+  // Collapse Navbar
+  var navbarCollapse = function() {
+    if ($("#mainNav").offset().top > 100) {
+      $("#mainNav").addClass("navbar-shrink");
+    } else {
+      $("#mainNav").removeClass("navbar-shrink");
+    }
+  };
+  // Collapse now if page is not at top
+  navbarCollapse();
+  // Collapse the navbar when page is scrolled
+  $(window).scroll(navbarCollapse);
 
-        items : 4,
-        itemsDesktopSmall : [979,3],
-        stopOnHover: true
- 
-    });
-
-    /* Testimonials slideshow
-    ----------------------------------------------*/
-    $("#testimonial-carousel").owlCarousel({
- 
-        autoPlay: 6000, //Set AutoPlay to 6 seconds
- 
-        singleItem: true,
-        pagination : false
- 
-    });
-
-    /* Tooltip
-    ----------------------------------------------*/
-    $('[data-toggle="tooltip"]').tooltip();
-
-    /* Lightbox
-    ----------------------------------------------*/
-    $('.image-link').magnificPopup({
-        type:'image'
-    });
-
-    /* Google map
-    ----------------------------------------------*/
-    $(".map").each(function(){
-            
-        var data_zoom = 17;
-        
-        if ($(this).attr("data-zoom") !== undefined) {
-            data_zoom = parseInt($(this).attr("data-zoom"),10);
-        }   
-        
-        $(this).gmap3({
-            marker: {
-                values: [{
-                    address: $(this).attr("data-address"),
-                    data: $(this).attr("data-address-details")
-                }],
-                options:{
-                    draggable: false
-                },
-                events:{
-                    click: function(marker, event, context){
-                        var map = $(this).gmap3("get"),
-                        infowindow = $(this).gmap3({get:{name:"infowindow"}});
-                        if (infowindow){
-                            infowindow.open(map, marker);
-                            infowindow.setContent(context.data);
-                        } else {
-                            $(this).gmap3({
-                                infowindow:{
-                                    anchor:marker, 
-                                    options:{content: context.data}
-                                }
-                            });
-                        }
-                    }
-                }
-            },
-            map: {
-                options: {
-                    mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    zoom: data_zoom,
-                    scrollwheel: false
-                }
-            }
-        });
-        
-    });
-          
 })(jQuery);
-
